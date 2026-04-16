@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RescueBite Dashboard with Interactivity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="dot">●</span> Rescue Bite
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">S</div>
+                <div class="user-info">
+                    <strong>Mohamed.S</strong>
+                    <span>Customer account</span>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li class="active"><i class="fa-solid fa-house"></i> My Account</li>
+                    <li><i class="fa-solid fa-box"></i> My Reservations</li>
+                    <li><i class="fa-solid fa-heart"></i> Favourites</li>
+                    <li><i class="fa-solid fa-trophy"></i> Best Sellers</li>
+                    <li><i class="fa-solid fa-wallet"></i> My Savings</li>
+                    <li><i class="fa-solid fa-gear"></i> Settings</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="welcome-msg">
+                    <h1>Welcome back, Mohamed! 👋</h1>
+                    <p>Here's your RescueBite activity</p>
+                </div>
+                <button class="browse-btn">Browse deals →</button>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card hover-card">
+                    <i class="fa-solid fa-utensils icon"></i>
+                    <p>Meals reserved</p>
+                    <h2>47</h2>
+                    <span class="subtext">All time</span>
+                </div>
+                <div class="stat-card hover-card">
+                    <i class="fa-solid fa-money-bill-wave icon"></i>
+                    <p>Total saved</p>
+                    <h2>$184</h2>
+                    <span class="subtext green-text">You're a super saver!</span>
+                </div>
+                <div class="stat-card hover-card">
+                    <i class="fa-solid fa-recycle icon"></i>
+                    <p>Food rescued</p>
+                    <h2>47 meals</h2>
+                    <span class="subtext green-text">Great impact!</span>
+                </div>
+                <div class="stat-card hover-card">
+                    <i class="fa-solid fa-star icon star-icon"></i>
+                    <p>Favourite restaurant</p>
+                    <h2>Forno Rosso</h2>
+                    <span class="subtext">14 visits</span>
+                </div>
+            </section>
+
+            <div class="bottom-section">
+                <div class="reservations hover-list-card">
+                    <div class="section-header">
+                        <h3>Recent Reservations</h3>
+                        <a href="#">See all →</a>
+                    </div>
+                    <div class="res-item hover-item">
+                        <span class="food-icon">🍕</span>
+                        <div class="res-info">
+                            <strong>Margherita Pizza · Forno Rosso</strong>
+                            <span>Today at 20:42</span>
+                        </div>
+                        <div class="res-price">
+                            <strong>$3.50</strong>
+                            <span class="status status-picked">Picked up</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-card hover-card green-hover">
+                    <h3>🌍 Your impact</h3>
+                    <div class="impact-content">
+                        <h1 class="animate-num">47</h1>
+                        <p>meals saved from waste</p>
+                        <p class="small">That's roughly <strong>23 kg</strong> of food rescued 🌱</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
