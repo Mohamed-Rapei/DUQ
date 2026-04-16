@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <aside class="sidebar">
+            <h2><span class="dot-logo"></span> Rescue <span>Site</span></h2>
+
+            <div class="admin">
+                <div class="avatar">A</div>
+                <div>
+                    <p>Super Admin</p>
+                    <small>Platform Administrator</small>
+                </div>
+            </div>
+
+            <ul>
+                
+                <li class="active"><i class="fa-solid fa-chart-column"></i> Dashboard</li>
+                <li><i class="fa-solid fa-chart-line"></i> Analytics</li>
+                <li><i class="fa-solid fa-store"></i> Restaurants</li>
+                <li><i class="fa-solid fa-users"></i> Users</li>
+                <li><i class="fa-solid fa-box"></i> Orders</li>
+                <li><i class="fa-solid fa-motorcycle"></i> Delivery Riders</li>
+                <li><i class="fa-solid fa-flag"></i> Reports</li>
+                <li><i class="fa-solid fa-gear"></i> Settings</li>
+            </ul>
+
+        </aside>
+
+
+        <main class="main">
+
+
+            <div class="header">
+                <div>
+                    <h1>Platform Overview</h1>
+                    <p>Everything happening right now</p>
+                </div>
+
+                <div class="actions">
+                    <button class="btn-light">Export CSV</button>
+                    <button class="btn-main">Generate Report</button>
+                </div>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <i class="fa-solid fa-utensils icon orange"></i>
+                    <h4>Total meals rescued</h4>
+                    <h2>3,241</h2>
+                    <span class="green-text">+12% this week</span>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-store icon red"></i>
+                    <h4>Active restaurants</h4>
+                    <h2>4<sup><b>8</b></sup></h2>
+                    <span class="green-text">+3 new</span>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-users icon gray"></i>
+                    <h4>Users</h4>
+                    <h2>1,842</h2>
+                    <span class="green-text">+8%</span>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-sack-dollar icon yellow"></i>
+                    <h4>Revenue</h4>
+                    <h2>$2,480</h2>
+                    <span class="green-text">+15%</span>
+                </div>
+
+            </div>
+
+
+            <div class="middle">
+
+                <div class="weekly-orders">
+                    <h3>Weekly Orders</h3>
+                    <div class="numbers">
+                        <span>42</span>
+                        <span>67</span>
+                        <span>55</span>
+                        <span>83</span>
+                        <span>71</span>
+                        <span>90</span>
+                        <span>62</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>Recent Activity</h3>
+                    <div class="recent-activity">
+                        <div class="header">
+                            <h2>Recent Activity</h2>
+                            <a href="#">View all</a>
+                        </div>
+
+                        <div class="activity-list">
+
+                            <div class="activity-item">
+                                <span class="dot green"></span>
+                                <div class="content">
+                                    <h4>New restaurant approved</h4>
+                                    <p>Burger Hub joined the platform</p>
+                                </div>
+                                <span class="time">2m ago</span>
+                            </div>
+
+                            <div class="activity-item">
+                                <span class="dot orange"></span>
+                                <div class="content">
+                                    <h4>Report flagged</h4>
+                                    <p>User complaint on Order #4821</p>
+                                </div>
+                                <span class="time">18m ago</span>
+                            </div>
+
+                            <div class="activity-item">
+                                <span class="dot blue"></span>
+                                <div class="content">
+                                    <h4>New rider registered</h4>
+                                    <p>James K. Pending verification</p>
+                                </div>
+                                <span class="time">1h ago</span>
+                            </div>
+
+                            <div class="activity-item">
+                                <span class="dot red"></span>
+                                <div class="content">
+                                    <h4>Offer expired without orders</h4>
+                                    <p>Hana — Ramen Set, 0/5 taken</p>
+                                </div>
+                                <span class="time">2h ago</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- table -->
+            <div class="table-box">
+                <h3>Pending Restaurant Approvals</h3>
+
+                <table>
+                    <tr>
+                        <th>Restaurant</th>
+                        <th>Owner</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+
+                    <tr>
+                        <td><i class="fa-solid fa-burger"></i> Smash Burger</td>
+                        <td>Tom Harris</td>
+                        <td><span class="pending">Pending</span></td>
+                        <td>
+                            <button class="approve">Approve</button>
+                            <button class="reject">Reject</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><i class="fa-solid fa-taco"></i> Taco Libre</td>
+                        <td>Maria</td>
+                        <td><span class="pending">Pending</span></td>
+                        <td>
+                            <button class="approve">Approve</button>
+                            <button class="reject">Reject</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
