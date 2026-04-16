@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f0ede6; 
+    color: #1a1a1a; 
+    padding: 20px;
+}
+
+header {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #f26e22;
+}
+
+.header-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+}
+
+.cart-badge {
+    background: #e03030;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.syne-font {
+    font-family: 'Syne', sans-serif;
+}
+
+.cart-header-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.close-cart-btn {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .35s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-cart-btn:hover {
+    background-color: orange;
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+
+.cart-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.empty-cart-btn {
+    background: none;
+    border: none;
+    color: #e03030;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cart-items-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.cart-footer {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.checkout-btn {
+    background: #1a1a1a !important; /*ده اقوى حاجة ممكن استخدمها علشان اخلى الكود يشتغل التأثير بتاعه على العنصر لما يكون العنصر ده واخد كذا امر ستايل*/  /*!important*/
+}
+
+.modal-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+}
+
+.success-text {
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.modal-close-btn {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.toast-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    z-index: 4000;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #888;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.filter-btn {
+    background: #faf8f4;
+    border: 1.5px solid #e5e0d8;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
+.filter-btn:hover:not(.active) {
+    border-color: #f26e22;
+    color: #f26e22;
+    
+}
+
+.cart-trigger {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+}
+
+.meals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meal-card {
+    background: #faf8f4;
+    border-radius: 20px;
+    border: 1px solid #e5e0d8;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease forwards;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #f26e22;
+    
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.meal-info-wrapper {
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.meal-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+}
+
+.price-new {
+    color: #f26e22;
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0ede6;
+    padding: 5px 12px;
+    border-radius: 10px;
+}
+
+.reserve-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #f26e22;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    height: 100vh;
+    background: #fff;
+    z-index: 2000;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+
+.cart-overlay.open {
+    right: 0;
+}
+
+.cart-dimmer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1500;
+    display: none;
+}
+
+.cart-dimmer.active {
+    display: block;
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.bump {
+    animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); color: #f26e22; }
+    100% { transform: scale(1); }
+}
+
+.sidebar-container {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar-header {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.close-btn {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .35s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background-color: orange;
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+
+.sidebar-body {
+    padding: 25px;
+}
+
+.filter-section {
+    margin-bottom: 30px;
+}
+
+.filter-section h4 {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.filter-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    transition: 0.2s;
+}
+
+.filter-section label:hover {
+    color: #ff6b00;
+}
+
+.filter-section input[type="checkbox"],
+.filter-section input[type="radio"] {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: #ff6b00;
+    cursor: pointer;
+}
+
+.price-slider {
+    width: 100%;
+    height: 6px;
+    background: #eee;
+    border-radius: 5px;
+    outline: none;
+    accent-color: #ff6b00;
+    margin-top: 10px;
+}
+
+.overlay-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1500;
+    backdrop-filter: blur(2px);
+}
+
+.bottom-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.bottom-button-container button {
+    width: 250px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .35s;
+}
+
+.bottom-button-container button:hover {
+    background-color: black;
+    color: white;
+}
