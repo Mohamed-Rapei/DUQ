@@ -820,4 +820,620 @@ header {
     color: var(--text-secondary);
 }
 
+:root {
+    --bg-color: #f4f3ee;
+    --primary-orange: #ff6b00;
+    --primary-light: #fff2e6;
+    --sidebar-white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-gray: #7a7a7a;
+    --success-green: #2ecc71;
+    --accent-blue: #4285f4;
+}
+
+/* =========================
+   DELIVERY DASHBOARD SCOPE
+========================= */
+.delivery-dashboard {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    color: var(--text-dark);
+}
+
+/* Layout */
+.delivery-dashboard .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+.delivery-dashboard .sidebar {
+    width: 260px;
+    background: var(--sidebar-white);
+    padding: 30px 20px;
+    border-right: 1px solid #eee;
+}
+
+.delivery-dashboard .logo {
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--primary-orange);
+    margin-bottom: 40px;
+}
+
+.delivery-dashboard .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.delivery-dashboard .avatar {
+    font-size: 2rem;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.delivery-dashboard .user-name {
+    font-weight: 800;
+    margin: 0;
+}
+
+.delivery-dashboard .user-role {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* Navigation */
+.delivery-dashboard nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.delivery-dashboard .nav-item {
+    padding: 14px 18px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-gray);
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s ease;
+}
+
+.delivery-dashboard .nav-item:hover {
+    background: var(--primary-light);
+    color: var(--primary-orange);
+    transform: translateX(4px);
+}
+
+.delivery-dashboard .nav-item.active {
+    background: var(--primary-light);
+    color: var(--primary-orange);
+}
+
+.delivery-dashboard .badge {
+    background: #ff4d4d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+}
+
+/* ================= MAIN ================= */
+.delivery-dashboard .main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.delivery-dashboard .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.delivery-dashboard .main-header h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+/* Toggle */
+.delivery-dashboard .status-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.delivery-dashboard .online-label {
+    color: var(--success-green);
+}
+
+/* Switch */
+.delivery-dashboard .switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+}
+
+.delivery-dashboard .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.delivery-dashboard .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.delivery-dashboard .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.delivery-dashboard input:checked + .slider {
+    background-color: var(--primary-orange);
+}
+
+.delivery-dashboard input:checked + .slider:before {
+    transform: translateX(21px);
+}
+
+/* ================= STATS ================= */
+.delivery-dashboard .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.delivery-dashboard .stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.delivery-dashboard .stat-card h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.delivery-dashboard .trend {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.delivery-dashboard .trend.up {
+    color: var(--success-green);
+}
+
+.delivery-dashboard .trend.down {
+    color: var(--accent-blue);
+}
+
+/* ================= BOTTOM ================= */
+.delivery-dashboard .bottom-sections {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+.delivery-dashboard .section-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.delivery-dashboard .count-tag {
+    background: var(--primary-light);
+    color: var(--primary-orange);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ================= ORDER CARD ================= */
+.delivery-dashboard .order-tracking-card {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    border: 2px solid #fff5ed;
+}
+
+.delivery-dashboard .order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.delivery-dashboard .order-id {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.delivery-dashboard .status-pill {
+    background: #e8f0fe;
+    color: var(--accent-blue);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Steps */
+.delivery-dashboard .steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.delivery-dashboard .step {
+    text-align: center;
+}
+
+.delivery-dashboard .circle {
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.delivery-dashboard .step.completed .circle {
+    background: #e8f7ee;
+    color: var(--success-green);
+    border: 2px solid var(--success-green);
+}
+
+.delivery-dashboard .step.current .circle {
+    background: white;
+    border: 2px solid var(--primary-orange);
+    color: var(--primary-orange);
+}
+
+/* Footer */
+.delivery-dashboard .order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed #eee;
+    padding-top: 20px;
+}
+
+.delivery-dashboard .food-info {
+    display: flex;
+    gap: 15px;
+}
+
+.delivery-dashboard .food-icon {
+    font-size: 1.5rem;
+    background: #fff9f5;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.delivery-dashboard .food-name {
+    font-weight: 800;
+    margin: 0;
+}
+
+.delivery-dashboard .address {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+.delivery-dashboard .action-btn {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* ================= MAP ================= */
+.delivery-dashboard .map-placeholder {
+    background: white;
+    height: 280px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #eee;
+}
+
+.delivery-dashboard .map-content {
+    text-align: center;
+    color: var(--text-gray);
+}
  
+:root {
+    --bg-color: #f4f3ee;
+    --sidebar-bg: #ffffff;
+    --primary-orange: #ff6b00;
+    --primary-light: #fff5ed;
+    --text-main: #1a1a1a;
+    --text-sub: #7a7a7a;
+    --card-bg: #ffffff;
+    --success: #2ecc71;
+}
+
+/* =========================
+   RESTAURANT DASHBOARD SCOPE
+========================= */
+.restaurant-dashboard {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    color: var(--text-main);
+}
+
+/* Layout */
+.restaurant-dashboard .container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+.restaurant-dashboard .sidebar {
+    width: 240px;
+    background: var(--sidebar-bg);
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.restaurant-dashboard .logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--primary-orange);
+    margin-bottom: 40px;
+}
+
+.restaurant-dashboard .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.restaurant-dashboard .avatar {
+    background: #ffe0cc;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.restaurant-dashboard .restaurant-name {
+    font-weight: 600;
+    margin: 0;
+}
+
+.restaurant-dashboard .sub-text {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    margin: 0;
+}
+
+/* NAVIGATION */
+.restaurant-dashboard nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.restaurant-dashboard nav li {
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-sub);
+    transition: 0.2s ease;
+}
+
+.restaurant-dashboard nav li:hover {
+    background: var(--primary-light);
+    color: var(--primary-orange);
+    transform: translateX(4px);
+}
+
+.restaurant-dashboard nav li.active {
+    background: var(--primary-light);
+    color: var(--primary-orange);
+}
+
+/* Badge */
+.restaurant-dashboard .badge {
+    float: right;
+    background: #ff4d4d;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+}
+
+/* ================= MAIN ================= */
+.restaurant-dashboard .main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.restaurant-dashboard header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.restaurant-dashboard header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.restaurant-dashboard .add-offer-btn {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ================= STATS ================= */
+.restaurant-dashboard .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.restaurant-dashboard .card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.2s ease;
+}
+
+.restaurant-dashboard .card:hover {
+    transform: translateY(-3px);
+}
+
+.restaurant-dashboard .card-label {
+    color: var(--text-sub);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.restaurant-dashboard .stat-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 5px 0;
+}
+
+.restaurant-dashboard .trend.up {
+    color: var(--success);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ================= BOTTOM GRID ================= */
+.restaurant-dashboard .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.restaurant-dashboard .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restaurant-dashboard .section-header a {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Offers */
+.restaurant-dashboard .offer-item {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.restaurant-dashboard .offer-item:hover {
+    transform: scale(1.02);
+}
+
+.restaurant-dashboard .emoji {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.restaurant-dashboard .offer-info {
+    flex: 1;
+}
+
+.restaurant-dashboard .item-name {
+    font-weight: 600;
+    margin: 0;
+}
+
+.restaurant-dashboard .offer-price {
+    text-align: right;
+}
+
+.restaurant-dashboard .price {
+    color: var(--primary-orange);
+    font-weight: 800;
+    margin: 0;
+}
+
+.restaurant-dashboard .time {
+    font-size: 0.75rem;
+    color: #ff4d4d;
+    margin: 0;
+}
+
+/* ================= CHART ================= */
+.restaurant-dashboard .chart-mock {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 150px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.restaurant-dashboard .bar-group {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.restaurant-dashboard .bar {
+    width: 30px;
+    background: #e0e0e0;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+
+.restaurant-dashboard .bar-group:nth-child(4) .bar {
+    background: var(--primary-orange);
+}

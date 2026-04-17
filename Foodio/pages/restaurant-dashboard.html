@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RescueBite Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="restaurant-dashboard">
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">● Rescue Bite</div>
+            
+            <div class="profile-section">
+                <div class="avatar">🍕</div>
+                <div>
+                    <p class="restaurant-name">Forno Rosso</p>
+                    <p class="sub-text">Restaurant Partner</p>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li class="active">📊 Overview</li>
+                    <li>➕ Add New Offer</li>
+                    <li>🍴 My Offers</li>
+                    <li>📦 Orders <span class="badge">4</span></li>
+                    <li>💰 Earnings</li>
+                    <li>⚙️ Settings</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div>
+                    <h1>Good morning, Forno Rosso! 👋</h1>
+                    <p class="sub-text">Here's how your deals are performing today</p>
+                </div>
+                <button class="add-offer-btn">+ Add Offer</button>
+            </header>
+
+            <section class="stats-grid">
+                <div class="card">
+                    <p class="card-label">📦 Orders today</p>
+                    <h2 class="stat-value">14</h2>
+                    <p class="trend up">↑ 4 vs yesterday</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">💰 Revenue recovered</p>
+                    <h2 class="stat-value">$49.00</h2>
+                    <p class="trend up">↑ Best day this week</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">🍽️ Active offers</p>
+                    <h2 class="stat-value">3</h2>
+                    <p class="trend">2 ending in < 30 min</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">♻️ Food rescued</p>
+                    <h2 class="stat-value">18 meals</h2>
+                    <p class="trend up">This week</p>
+                </div>
+            </section>
+
+            <div class="bottom-grid">
+                <section class="active-offers">
+                    <div class="section-header">
+                        <h3>Active Offers Now</h3>
+                        <a href="#">Manage all →</a>
+                    </div>
+                    
+                    <div class="offer-item">
+                        <span class="emoji">🍕</span>
+                        <div class="offer-info">
+                            <p class="item-name">Margherita Pizza (large)</p>
+                            <p class="sub-text">2 of 4 portions left</p>
+                        </div>
+                        <div class="offer-price">
+                            <p class="price">$3.50</p>
+                            <p class="time">● 7 min</p>
+                        </div>
+                    </div>
+
+                    <div class="offer-item">
+                        <span class="emoji">🥗</span>
+                        <div class="offer-info">
+                            <p class="item-name">Caesar Salad</p>
+                            <p class="sub-text">5 of 6 portions left</p>
+                        </div>
+                        <div class="offer-price">
+                            <p class="price">$2.00</p>
+                            <p class="time">● 38 min</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="orders-chart">
+                    <h3>This Week's Orders</h3>
+                    <div class="chart-mock">
+                        <div class="bar-group"><span>8</span><div class="bar" style="height: 40px;"></div><span>Mon</span></div>
+                        <div class="bar-group"><span>12</span><div class="bar" style="height: 60px;"></div><span>Tue</span></div>
+                        <div class="bar-group"><span>9</span><div class="bar" style="height: 45px;"></div><span>Wed</span></div>
+                        <div class="bar-group"><span>15</span><div class="bar" style="height: 80px;"></div><span>Thu</span></div>
+                        <div class="bar-group"><span>14</span><div class="bar" style="height: 70px;"></div><span>Fri</span></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+<script src="../assets/js/dashboard-restaurant.js"></script>
+</body>
+</html>
