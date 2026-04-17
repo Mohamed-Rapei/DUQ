@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RescueBite - Delivery Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">● Rescue Bite</div>
+            
+            <div class="user-profile">
+                <div class="avatar">🛵</div>
+                <div>
+                    <p class="user-name">James K.</p>
+                    <p class="user-role">Delivery Rider</p>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li class="nav-item active">🏠 My Dashboard</li>
+                    <li class="nav-item">📦 Active Orders <span class="badge">2</span></li>
+                    <li class="nav-item">📋 Order History</li>
+                    <li class="nav-item">💰 My Earnings</li>
+                    <li class="nav-item">⚙️ Settings</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="welcome-text">
+                    <h1>Hey James! 🛵</h1>
+                    <p class="status-sub">You're online — 2 active deliveries</p>
+                </div>
+                <div class="status-toggle-container">
+                    <span>Status:</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="online-label">Online</span>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <span class="icon">📦</span>
+                    <p>Deliveries today</p>
+                    <h2>8</h2>
+                    <p class="trend up">↑ 2 vs yesterday</p>
+                </div>
+                <div class="stat-card">
+                    <span class="icon">💵</span>
+                    <p>Earnings today</p>
+                    <h2>$24.00</h2>
+                    <p class="trend up">Best day this week</p>
+                </div>
+                <div class="stat-card">
+                    <span class="icon">⏱️</span>
+                    <p>Avg delivery time</p>
+                    <h2>11 min</h2>
+                    <p class="trend down">↓ 2 min faster</p>
+                </div>
+                <div class="stat-card">
+                    <span class="icon">⭐</span>
+                    <p>My rating</p>
+                    <h2>4.9</h2>
+                    <p class="trend up">Top 5% rider</p>
+                </div>
+            </section>
+
+            <div class="bottom-sections">
+                <section class="active-delivery">
+                    <div class="section-title">
+                        <h3>Active Deliveries</h3>
+                        <span class="count-tag">2 ongoing</span>
+                    </div>
+                    
+                    <div class="order-tracking-card">
+                        <div class="order-header">
+                            <span class="order-id">Order #5020</span>
+                            <span class="status-pill">Picking up</span>
+                        </div>
+
+                        <div class="steps-container">
+                            <div class="step completed">
+                                <div class="circle">✓</div>
+                                <span>Assigned</span>
+                            </div>
+                            <div class="line active"></div>
+                            <div class="step current">
+                                <div class="circle">🛵</div>
+                                <span>Picking up</span>
+                            </div>
+                            <div class="line"></div>
+                            <div class="step">
+                                <div class="circle">📦</div>
+                                <span>Delivering</span>
+                            </div>
+                            <div class="line"></div>
+                            <div class="step">
+                                <div class="circle">✓</div>
+                                <span>Done</span>
+                            </div>
+                        </div>
+
+                        <div class="order-footer">
+                            <div class="food-info">
+                                <span class="food-icon">🍱</span>
+                                <div>
+                                    <p class="food-name">Ramen + Gyoza Set</p>
+                                    <p class="address">Hana Restaurant → Marcus J.</p>
+                                </div>
+                            </div>
+                            <button class="action-btn">Picked up →</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="map-section">
+                    <h3>Today's map</h3>
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            🗺️
+                            <p>Live map — 2 active routes</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
